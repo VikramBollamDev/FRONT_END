@@ -1,0 +1,16 @@
+<div>
+	<input [(ngModel)]="newCommentText" placeholder="Add a comment">
+	<button (click)="addComment()">Add Comment</button>
+</div>
+<div>
+	<input #searchBox (input)="searchComments(searchBox.value)" placeholder="Search Comments" />
+</div>
+<ul>
+	<li *ngFor="let comment of comments">
+		{{comment.text}}
+		<button (click)="deleteComment(comment.id)">Delete</button>
+	</li>
+</ul>
+<div class="comment-feed">
+	<button (click)="resetCommentFeed()">Reset comment feed</button>
+</div>
